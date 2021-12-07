@@ -40,9 +40,24 @@ typedef struct{
 
 int main()
 {
+    FILE *archivo;
     Deportista deportistas[100];
-    // Puede cambiar la declaración de este arreglo a donde lo considere necesario
     char deporte[6][30] = {"Natación", "Atletismo", "Ciclismo", "Gimnasia", "Equitacion", "Esgrima"};
+
+    archivo = fopen("informacion.txt", "r");
+    archivo = fopen("informacion.txt", "w");
+
+    fscanf(archivo, "%s", Deportista.deporte);
+    fscanf(archivo, "%d", &Deportista.numMedallas);
+
+    for(i=0; i<6; i++)
+    {
+        fprintf(archivo, "%s %d", deportistas.deporte[i], deportistas.numMedallas)
+    }
+
+
+
+    fclose(archivo);
 
     return 0;
 }
